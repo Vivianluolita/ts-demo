@@ -38,6 +38,7 @@ class ActionHelper {
   }
 
   add(item: ItemData): number {
+    console.log("item1111", item)
     item.id = this.dataHelper.addData(item);
     this.memoList.push(item);
     this.dataHelper.saveData(this.memoList);
