@@ -49,16 +49,17 @@ npm i vuex
 
 1. export default ItemData
 
-![111](./src/assets/4.png)
+  ![111](./src/assets/4.png)
 
 2. 赋值
-![111](./src/assets/5.png)
+
+  ![111](./src/assets/5.png)
 
 ### DataHelper.ts
 
 1. 负责localstorage操作
 
-![111](./src/assets/6.png)
+  ![111](./src/assets/6.png)
 
 2. 新增了两个字段：memoData,id
 
@@ -66,19 +67,20 @@ npm i vuex
 
 1. 将DataHelper.ts 存的数据引进来，并且对引进来的数据进行业务处理。
 
-![111](./src/assets/7.png)
+  ![111](./src/assets/7.png)
 
 2. ActionHelper.ts 中的readData()作用：将常见的Object对象转化为ItemData队列
 
-![111](./src/assets/8.png)
-![111](./src/assets/9.png)
+  ![111](./src/assets/8.png)
+  ![111](./src/assets/9.png)
+
 3. 调用，调用的同事就构造了默认结构
 
-![111](./src/assets/10.png)
+  ![111](./src/assets/10.png)
 
 4. ActionHelper除了读取还有新增，修改，删除业务。新增方法addData需要重写一下
 
-![111](./src/assets/11.png)
+  ![111](./src/assets/11.png)
 
 ```
 1. a 会返回生成新的Id的对象，保存进本地的 dataHelper中
@@ -92,20 +94,21 @@ npm i vuex
 
 - 传入当前的 memo Item值，再在ActionHelper做处理。
 
-![111](./src/assets/12.png)
+  ![111](./src/assets/12.png)
 
 - 测试
 
-![111](./src/assets/13.png)
+  ![111](./src/assets/13.png)
 
 ### vuex使用
 
 
-![111](./src/assets/14.png)
-![111](./src/assets/15.png)
+  ![111](./src/assets/14.png)
+  ![111](./src/assets/15.png)
 
-1. vuex 使用 AxtionHelper,而DataHelper不要直接取引用。因为我们不会直接使用它。而是全局使用AxtionHelper就可以了。
-
+  ```
+  vuex 使用 AxtionHelper,而DataHelper不要直接取引用。因为我们不会直接使用它。而是全局使用AxtionHelper就可以了。
+  ```
 ### ItemList
 
 ```
@@ -126,20 +129,22 @@ npm i vuex
 ![111](./src/assets/16.png)
 
 1. 初始化数据，就是给ItemList 中memoArr data赋值
- 
+```
  调用vuex  state aHepler相当于构造了一个新的对象
+
+``` 
 
 2. @prop 应该为ts 语法糖写法，我见过没用语法糖的.子组件
 
-![111](./src/assets/17.png)
+  ![111](./src/assets/17.png)
 
 3. 父子组件写法，以及@Component语法糖
 
-![111](./src/assets/18.png)
+  ![111](./src/assets/18.png)
 
 4. vuex调用方法，不用dispatch或者commit 就可以与class中ActionHelper联动
 
-![111](./src/assets/19.png)
+  ![111](./src/assets/19.png)
 ### 删除包括页面删除和本地删除
 
 
@@ -185,12 +190,13 @@ npm i vuex
 
 1. 类别数量
 
-![111](./src/assets/28.png)
-![111](./src/assets/29.png)
-![111](./src/assets/30.png)
+  ![111](./src/assets/28.png)
+  ![111](./src/assets/29.png)
+  ![111](./src/assets/30.png)
 
 
 1. 类别数据
-![111](./src/assets/31.png)
-![111](./src/assets/32.png)
-![111](./src/assets/33.png)
+
+  ![111](./src/assets/31.png)
+  ![111](./src/assets/32.png)
+  ![111](./src/assets/33.png)
