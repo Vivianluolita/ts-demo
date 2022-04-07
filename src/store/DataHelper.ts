@@ -33,7 +33,7 @@ class DataHelper {
     localStorage.setItem(this.dataKey, str);
   }
 
-  // 3.新增数据---------------------------
+  // 3.新增数据处理，并且保存到 本地 localStorage 中---------------------------
   addData(newDataObj: any): number {
     let dataArray = this.readData();
     if (dataArray == null) {

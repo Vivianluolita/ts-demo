@@ -36,10 +36,12 @@ class ActionHelper {
     const arrName = ['工作', '生活', '学习']
     return arrName[cateId]
   }
-
+  // 数据操作也没有通过ActionHelper进行，而是通过了DataHelper进行的，ActionHelpoer只是个中间层。调的数据操作都是DataHelper进行的。
   add(item: ItemData): number {
     console.log("item1111", item)
+    // 这里是做存储到localstorage里面的操作
     item.id = this.dataHelper.addData(item);
+    // 同时本地页面也要做操作
     this.memoList.push(item);
     this.dataHelper.saveData(this.memoList);
     return item.id;
@@ -47,6 +49,7 @@ class ActionHelper {
   }
 
   edit(item: ItemData): void {
+    // 这里通过let 声明的变量就可以 修改声明变量的值 并且这个指针所指的this.memoList的值也可以改变。
     let editItem: ItemData | undefined = this.memoList.find(ele => {
       return ele.id == item.id
     });
@@ -55,6 +58,7 @@ class ActionHelper {
       editItem.title = item.title;
       editItem.content = item.content;
 
+     console.log('this.memoList',this.memoList)
       //c.将更新后的 数组 重新保存到 本地localstorage
       this.dataHelper.saveData(this.memoList);
     }

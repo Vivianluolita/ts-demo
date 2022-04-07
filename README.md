@@ -200,3 +200,12 @@ npm i vuex
   ![111](./src/assets/31.png)
   ![111](./src/assets/32.png)
   ![111](./src/assets/33.png)
+
+### 放项目中的问题
+
+```
+.vue 页面可以调用_this.$store.state.doa.device.deviceInfo.edit(resHandle)
+
+但是vuex的js页面，就不能这样写 $store.state.deviceInfo.edit(resHandle)，会报错。
+
+```

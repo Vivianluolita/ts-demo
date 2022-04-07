@@ -68,6 +68,7 @@ export default class MemoEditor extends Vue {
         this.$store.state.aHelper.add(this.memo);
       } else {
         // 修改
+        console.log("编辑01")
         this.$store.state.aHelper.edit(this.memo);
       }
       this.$store.state.isShow = false;
